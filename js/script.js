@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,
-  [categories], // ***** <---- TODO: STEP 1: Substitute [...] ******
+  buildAndShowHomeHTML, // ***** <---- TODO: STEP 1: Substitute [...] ******
   true); // Explicitly setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
@@ -129,6 +129,7 @@ function buildAndShowHomeHTML (categories) {
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
+
 
 
 // Given array of category objects, returns a random category object.
